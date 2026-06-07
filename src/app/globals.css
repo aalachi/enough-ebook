@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Design tokens — extracted from the ebook (theme.css): cream/sage/blush
+   palette + Cormorant (display) / Lora (body). Exposed as Tailwind v4 theme
+   tokens so utilities like bg-cream, text-ink, font-display work.
+--------------------------------------------------------------------------- */
+@theme inline {
+  --color-cream: #fbf8f3;
+  --color-sand: #ece3d5;
+  --color-sage: #7e8a76;
+  --color-sage-soft: #e6ebe0;
+  --color-blush: #e4cbc4;
+  --color-blush-soft: #f6ece7;
+  --color-ink: #3b3a36;
+  --color-muted: #8c857b;
+
+  /* font CSS vars are provided by next/font in layout.tsx */
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-body: var(--font-lora), Georgia, serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Base element styles live in @layer base so Tailwind utilities (e.g.
+   text-cream on a heading) can override them. */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    line-height: 1.7;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: var(--color-sage);
+  }
+}
+
+/* Letter-spaced editorial eyebrow label */
+.eyebrow {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: var(--color-blush);
+}
+
+/* Lenis smooth-scroll baseline (https://github.com/darkroomengineering/lenis) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Marquee (Real Women row) — content is duplicated, so -50% loops seamlessly */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 48s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* Reduced motion: ensure all reveal targets are visible if JS gates them */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
