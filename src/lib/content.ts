@@ -15,7 +15,7 @@ export const book = {
   // checkout directly), e.g. "https://yourname.gumroad.com/l/enough?wanted=true".
   // Buyers pay by normal credit/debit card; the gumroad.js script in layout.tsx
   // turns these CTAs into an in-page checkout modal. Until set, it just scrolls.
-  buyHref: "#get-the-book",
+  buyHref: "shop.readenough.com",
   cover: "/images/cover.png",
 };
 
