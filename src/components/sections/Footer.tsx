@@ -11,6 +11,7 @@ export default function Footer() {
           </p>
           <a
             href={book.buyHref}
+            data-cta="buy"
             className="mt-10 inline-flex min-h-[54px] items-center justify-center rounded-full bg-cream px-9 text-base font-medium text-ink transition-transform duration-300 hover:scale-[1.03]"
           >
             Get the book — {book.price}

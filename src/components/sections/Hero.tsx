@@ -109,6 +109,7 @@ export default function Hero() {
           <div className="hero-fade mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
               href={book.buyHref}
+              data-cta="buy"
               className="inline-flex h-13 min-h-[52px] items-center justify-center rounded-full bg-cream px-8 text-base font-medium tracking-wide text-ink transition-transform duration-300 hover:scale-[1.03]"
             >
               Get the book — {book.price}

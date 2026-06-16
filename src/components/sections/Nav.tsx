@@ -31,6 +31,7 @@ export default function Nav() {
         </a>
         <a
           href={book.buyHref}
+          data-cta="buy"
           className={`inline-flex min-h-[44px] items-center rounded-full px-5 text-sm font-medium transition-colors duration-500 ${
             solid
               ? "bg-sage text-cream hover:bg-sage/90"
