@@ -46,7 +46,7 @@ export default function Offer() {
               </div>
 
               <a
-                href={book.buyHref}
+                href="https://shop.readenough.com"
                 className="mt-6 flex min-h-[54px] w-full items-center justify-center rounded-full bg-sage px-8 text-base font-medium text-cream transition-transform duration-300 hover:scale-[1.02]"
               >
                 Get the book — {book.price}
