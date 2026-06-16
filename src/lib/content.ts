@@ -6,7 +6,7 @@ export const book = {
   subtitle: "Real Self-Care for Women Who Are Too Busy for It",
   tagline:
     "Small, doable ways to feel like yourself again — even on your worst weeks.",
-  pages: 50,
+  pages: 62,
   price: "$24",
   regularPrice: "$39",
   launchTag: "Launch price",
