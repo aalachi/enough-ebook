@@ -4,6 +4,7 @@ import { Cormorant_Garamond, Lora } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import MetaPixel from "@/components/MetaPixel";
+import TelegramTracker from "@/components/TelegramTracker";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default function RootLayout({
     <html lang="en" className={`${cormorant.variable} ${lora.variable}`}>
       <body className="min-h-full">
         <MetaPixel />
+        <TelegramTracker />
         <SmoothScroll>{children}</SmoothScroll>
         {/* Gumroad overlay: turns links to your Gumroad product URL into an
             in-page card-checkout modal. Inert until buyHref is a Gumroad URL. */}
